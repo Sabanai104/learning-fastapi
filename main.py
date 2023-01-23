@@ -4,14 +4,12 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-
 @app.get('/')
 def index():
     return {
         'data': {
             'name': 'Sabanai'
         }}
-
 
 @app.get('/blog')
 def getBlog(limit: int = 10, published: bool = True, sort: Optional[str] = None):
